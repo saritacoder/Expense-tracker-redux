@@ -70,3 +70,11 @@
     background-color: transparent;
     color: #ae82cc;
   }
+
+  .actions p {
+    color: white !important;
+  }
+  
+  p {
+    color: white !important;
+  }
