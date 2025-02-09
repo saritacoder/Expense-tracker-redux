@@ -137,8 +137,8 @@
 
 
 
-import { useState, useRef } from 'react';
-
+import { useState, useRef,useContext } from 'react';
+import AuthContext from '../../context/AuthContext';
 import classes from './Signup.module.css';
 
 const Signup = () => {
@@ -147,6 +147,9 @@ const Signup = () => {
     const [isLogin, setIsLogin] = useState(true);
     const [isLoading, setIsLoading] = useState(false);
     const [errorMessage, setErrorMessage] = useState('');
+
+
+const authCtx = useContext(AuthContext);
 
     const switchAuthModeHandler = () => {
         setIsLogin((prevState) => !prevState);
@@ -180,6 +183,7 @@ const Signup = () => {
                 if (res.ok) {
                     return res.json().then((data) => {
                         console.log(data);
+                        authCtx.login(data.idToken); // Stored the token in AuthContext
                     });
                 } else {
                     return res.json().then((data) => {
