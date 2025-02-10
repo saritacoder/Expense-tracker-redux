@@ -1,0 +1,16 @@
+.header {
+    width: 100%;
+    height: 5rem;
+    background-color: white;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4%;
+    /* Add these properties for fixed positioning */
+    position: fixed;
+    top: 0; /* Ensures the header stays at the top */
+    left: 0;
+    z-index: 1000; /* Ensures the header stays above other content */
+}
+  
