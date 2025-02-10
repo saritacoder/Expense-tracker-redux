@@ -84,14 +84,19 @@ const navigate = useNavigate(); // Initialized useNavigate
                 </div>
 
  {/* Forgot Password Link added */}
+
  {isLogin && (
-          <div className="forgot-password">
-              <a 
-                onClick={() => navigate('/forgot-password')} // Navigating to Forgot Password page on click
-              >
-                Forgot Password?
-              </a>
-          </div>
+         <div className="forgot-password">
+  <a 
+    style={{ color: 'white', textDecoration: 'none' }}
+    onClick={() => navigate('/forgot-password')}
+  >
+    Forgot Password?
+  </a>
+</div>
+
+
+
         )}
 
 

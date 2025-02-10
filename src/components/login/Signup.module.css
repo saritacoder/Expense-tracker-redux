@@ -36,6 +36,25 @@
     padding: 0.25rem;
   }
   
+  /* :global(.forgot-password a) {
+    color: white;
+    text-decoration: none;
+  }
+  
+  :global(.forgot-password a:hover) {
+    color: #ddd;
+  } */
+
+
+  .forgot-password a {
+    color: white;
+    text-decoration: none; /* Optional: removes the underline */
+  }
+  
+  .forgot-password a:hover {
+    color: #ddd; /* Optional: change color on hover */
+  }
+
   .actions {
     margin-top: 1.5rem;
     display: flex;
