@@ -83,6 +83,19 @@ const navigate = useNavigate(); // Initialized useNavigate
                     <input type='password' id='password' required ref={passwordInputRef} />
                 </div>
 
+ {/* Forgot Password Link added */}
+ {isLogin && (
+          <div className="forgot-password">
+              <a 
+                onClick={() => navigate('/forgot-password')} // Navigating to Forgot Password page on click
+              >
+                Forgot Password?
+              </a>
+          </div>
+        )}
+
+
+
                 <div className={classes.actions}>
                     {!isLoading && <button type='submit'>{isLogin ? 'Login' : 'Create Account'}</button>}
                     {isLoading && <p>Sending Request...</p>}
