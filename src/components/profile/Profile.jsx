@@ -33,7 +33,7 @@ const Profile = () => {
   const sendVerificationEmail = async () => {
     try {
       const response = await fetch(
-        'https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=AIzaSyBTuARjfplXy5aA6LBws6I4kTS42MpEa-A',
+        'https://identitytoolkit.googleapis.com/v1/accounts:sendOobCode?key=AIzaSyAbUy5evKN-VSMQp6pan71s_ydy5W0gD_s',
         {
           method: 'POST',
           headers: {

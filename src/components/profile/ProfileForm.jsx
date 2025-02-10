@@ -32,7 +32,7 @@ const ProfileForm = ({ closeForm }) => {
     }
 
     //sending the updated data to the firebase database
-    fetch('https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyBTuARjfplXy5aA6LBws6I4kTS42MpEa-A', {
+    fetch('https://identitytoolkit.googleapis.com/v1/accounts:update?key=AIzaSyAbUy5evKN-VSMQp6pan71s_ydy5W0gD_s', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
