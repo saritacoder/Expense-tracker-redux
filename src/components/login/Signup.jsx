@@ -1,5 +1,5 @@
 
-
+import { useNavigate } from 'react-router-dom';
 import { useState, useRef,useContext } from 'react';
 import AuthContext from '../../context/AuthContext';
 import classes from './Signup.module.css';
@@ -13,9 +13,11 @@ const Signup = () => {
 
 
 const authCtx = useContext(AuthContext);
+const navigate = useNavigate(); // Initialized useNavigate
+
 
     const switchAuthModeHandler = () => {
-        setIsLogin((prevState) => !prevState);
+        setIsLogin((prevState) => !prevState); // Toggle between Login and signUp state
     };
 
     const submitHandler = (e) => {

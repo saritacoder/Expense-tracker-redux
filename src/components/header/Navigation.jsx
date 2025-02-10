@@ -11,7 +11,7 @@ const Navigation = () => {
 
     const isLoggedIn = authCtx.isLoggedIn;
 
-    // const navigate = useNavigate();
+    const navigate = useNavigate();
 
     const logoutHandler =()=>{
         authCtx.logout();
@@ -30,11 +30,20 @@ const Navigation = () => {
               </Link>
             </li>
           )}
+{isLoggedIn &&(
+  <div className='headerList'>
+ <button>
+ <Link to='/profile'>Profile</Link>
+</button> 
+</div>
+)}
 
-
-        <button>
-              <Link to='/profile'>Profile</Link>
-            </button> 
+{isLoggedIn &&(
+  <li>
+    <button onClick={logoutHandler} className='logout'>Logout</button>
+</li>
+)}
+       
         </ul>
       </nav>
     </header>
