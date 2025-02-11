@@ -72,6 +72,9 @@ const navigate = useNavigate(); // Initialized useNavigate
 
     return (
         <section>
+            <h1>asdfghjkl</h1>
+            <h2>sdfghj</h2>
+            <h3>fghjk</h3>
             <form onSubmit={submitHandler} className={classes.auth}>
                 <h1>{isLogin ? 'Login' : 'Sign Up'}</h1>
                 <div className={classes.control}>
