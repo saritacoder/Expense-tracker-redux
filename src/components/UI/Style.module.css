@@ -1,0 +1,39 @@
+.data-loader {
+  width: 80px;
+  height: 80px;
+  border: 8px solid;
+  border-color: #14b8a6 transparent; /* Updated to teal color */
+  border-radius: 50%;
+  animation: loader 1s linear infinite;
+}
+
+.loader {
+  width: 24px;
+  height: 24px;
+  border: 4px solid #ffffff5d; /* Soft white color */
+  border-top-color: #14b8a6; 
+  border-radius: 50%;
+  animation: loader 1s linear infinite;
+}
+
+.custom-style {
+  animation: modal 0.2s ease-out; /* Slightly increased animation duration */
+}
+
+@keyframes modal {
+  from {
+    top: 0;
+  }
+  to {
+    top: 25%;
+  }
+}
+
+@keyframes loader {
+  from {
+    transform: rotate(0);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

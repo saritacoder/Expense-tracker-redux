@@ -1,42 +1,38 @@
-import React from 'react'
-import {useState,createContext} from 'react';
+/* eslint-disable react/prop-types */
+import { createContext, useState } from 'react';
 
 const AuthContext = createContext({
-token:'',
-isLoggedIn:false,
-login:(token)=>{},
-logout:()=>{}
-}) 
+  idToken: null,
+  loggedIn: false,
+  login: () => {},
+  logout: () => {},
+});
 
-export const AuthProvider = (props) => {
-const [token,setToken]=useState(()=>localStorage.getItem('idToken'));
+export default AuthContext;
 
-const userIsLoggedIn = !!token ; // true if token is not null or not empty string but false if it is null or empty string
+export function AuthContextProvider({ children }) {
+  const [idToken, setIdToken] = useState(localStorage.getItem('idToken'));
 
-const loginHandler = (token)=>{
-    console.log('user logged in', token);
-    setToken(token);
-    localStorage.setItem('idToken', token); // stores the token in local storage so that on refresh of page it can be accessed
+  const loggedIn = !!idToken;
 
-}
-const logoutHandler =()=>{
-    console.log('user logged out');
-    setToken(null);
+  function handleLogin(idToken) {
+    setIdToken(idToken);
+    localStorage.setItem('idToken', idToken);
+  }
+
+  function handleLogout() {
+    setIdToken(null);
     localStorage.removeItem('idToken');
+  }
+
+  const authCtxValue = {
+    idToken: idToken,
+    loggedIn: loggedIn,
+    login: handleLogin,
+    logout: handleLogout,
+  };
+
+  return (
+    <AuthContext.Provider value={authCtxValue}>{children}</AuthContext.Provider>
+  );
 }
-
-const contextValue={
-    token:token,
-    isLoggedIn:userIsLoggedIn,
-    login:loginHandler,
-    logout:logoutHandler,
-}
-
-return(
-    <AuthContext.Provider value={contextValue}>{props.children}</AuthContext.Provider>
-)
-}
-
-
-
-export default AuthContext

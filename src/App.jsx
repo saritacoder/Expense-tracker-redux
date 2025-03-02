@@ -1,35 +1,50 @@
-import { useState,useContext } from 'react'
-import './App.css'
-// import Header from './components/header/Header'
-import { Navigate, Route, Routes } from 'react-router-dom';
-import AuthContext from './context/AuthContext';
-import Profile from './components/profile/Profile';
-import Header from './components/header/Heade';
-import Signup from './components/login/Signup';
-import ForgotPassword from './components/forgotpassword/ForgotPassword';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
-function App() {
-const authCtx = useContext(AuthContext);
+import { useSelector } from 'react-redux';
+
+import Header from './components/Header/Header';
+import ProfilePage from './pages/ProfilePage';
+import LoginPage from './pages/LoginPage';
+import SignUpPage from './pages/SignUpPage';
+import ForgotPasswordPage from './pages/ForgotPasswordPage';
+import ExpensesPage from './pages/ExpensesPage';
+import NotFoundPage from './pages/NotFoundPage';
+
+export default function App() {
+  const loggedIn = useSelector((state) => state.authState.loggedIn);
 
   return (
     <>
-    <Header>
-<Routes>
-<Route path="/" element={<Signup />} />
-<Route path="/login" element={<Signup />} />
-<Route path="/forgot-password" element={<ForgotPassword />} />
+      <Header />
+      <Switch>
+        <Route path="/" exact>
+          <Redirect to="/profile" />
+        </Route>
 
-<Route   path="/profile"  element={authCtx.isLoggedIn ? <Profile /> : <Navigate to="/login" />}      />     
-             
-           
-      
-</Routes>
-   
- 
-    </Header>
- 
+        <Route path="/profile">
+          {loggedIn ? <ProfilePage /> : <Redirect to="/login" />}
+        </Route>
+
+        <Route path="/expenses">
+          {loggedIn ? <ExpensesPage /> : <Redirect to="/login" />}
+        </Route>
+
+        <Route path="/login">
+          {!loggedIn ? <LoginPage /> : <Redirect to="/profile" />}
+        </Route>
+
+        <Route path="/signup">
+          {!loggedIn ? <SignUpPage /> : <Redirect to="/profile" />}
+        </Route>
+
+        <Route path="/forgot-password">
+          {!loggedIn ? <ForgotPasswordPage /> : <Redirect to="/profile" />}
+        </Route>
+
+        <Route>
+          <NotFoundPage />
+        </Route>
+      </Switch>
     </>
-  )
+  );
 }
-
-export default App
