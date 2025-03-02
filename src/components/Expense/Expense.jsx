@@ -320,7 +320,7 @@ export default function Expense() {
       {proMember && (
         <div className="w-11/12 sm:max-w-3xl bg-gray-400 p-1 rounded-md flex">
           <button onClick={() => dispatch(setTheme())}>{theme ? <LightModeIcon /> : <DarkModeIcon />}</button>
-          <a className="ml-10 cursor-pointer" id="a1" onClick={() => {
+          {/* <a className="ml-10 cursor-pointer" id="a1" onClick={() => {
               const expenseItem = expenses.map((e) => Object.values(e));
               expenseItem.map((d) => d.shift());
               expenseItem.unshift(['Amount', 'Description', 'Category']);
@@ -332,7 +332,27 @@ export default function Expense() {
             target="_blank"
           >
             <DownloadIcon />
-          </a>
+          </a> */}
+       
+       <a
+  className="ml-10 cursor-pointer"
+  id="a1"
+  onClick={() => {
+    const expenseItem = expenses.map((e) => [e.amount, e.description, e.category]); // Ensure correct order
+    expenseItem.unshift(['Amount', 'Description', 'Category']);
+    const expensesToDownload = expenseItem.map((e) => e.join(',')).join('\n'); // Ensure proper CSV formatting
+    const blob = new Blob([expensesToDownload], { type: 'text/csv' }); // Explicitly set type
+    const a = document.getElementById('a1');
+    a.href = URL.createObjectURL(blob);
+  }}
+  download="expenses.csv"
+  target="_blank"
+>
+  <DownloadIcon />
+</a>
+
+       
+       
         </div>
       )}
       {content}
