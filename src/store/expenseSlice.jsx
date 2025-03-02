@@ -1,6 +1,64 @@
+// import { createSlice } from '@reduxjs/toolkit';
+
+// const initialState = { expenses: [], totalExpenseAmount: 0 };
+
+// const expenseSlice = createSlice({
+//   name: 'expense',
+//   initialState,
+//   reducers: {
+//     fetchedExpense(state, action) {
+//       state.expenses = action.payload.fetchedData;
+//       state.totalExpenseAmount = action.payload.totalExpenseAmount;
+//     },
+
+//     addExpense(state, action) {
+//       state.expenses = [...state.expenses, action.payload];
+//       state.totalExpenseAmount += action.payload.amount;
+//     },
+
+//     editExpense(state, action) {
+//       const updatedExpenses = state.expenses.map((e) => {
+//         if (e.id === action.payload.id) {
+//           state.totalExpenseAmount =
+//             state.totalExpenseAmount - e.amount + action.payload.amount; // Subtracting the old amount (e.amount).
+//                                                                                  // Adding the new amount (action.payload.amount).
+//           return action.payload;  // Returns the new updated expense when the id matches.
+//         }
+//         return e;//  Returns the original expense if the id does not match.
+//       });
+//       state.expenses = updatedExpenses;  //Replaces the existing state.expenses with the newly updated array.
+//     },
+
+//     deleteExpense(state, action) {
+//       const updatedExpenses = state.expenses.filter((e) => {
+//         return e.id !== action.payload.delId;
+//       });
+//       state.expenses = updatedExpenses;
+//       state.totalExpenseAmount -= action.payload.amount;
+//     },
+//   },
+// });
+
+// export const { fetchedExpense, addExpense, editExpense, deleteExpense } =
+//   expenseSlice.actions;
+
+// export default expenseSlice.reducer;
+
+
+
+
+
 import { createSlice } from '@reduxjs/toolkit';
 
-const initialState = { expenses: [], totalExpenseAmount: 0 };
+const storedExpenses = JSON.parse(localStorage.getItem('expenses')) || [];
+const storedTotalAmount = JSON.parse(localStorage.getItem('totalExpenseAmount')) || 0;
+const storedTotalCount = JSON.parse(localStorage.getItem('totalExpenseCount')) || 0;
+
+const initialState = { 
+  expenses: storedExpenses, 
+  totalExpenseAmount: storedTotalAmount, 
+  totalExpenseCount: storedTotalCount 
+};
 
 const expenseSlice = createSlice({
   name: 'expense',
@@ -9,32 +67,42 @@ const expenseSlice = createSlice({
     fetchedExpense(state, action) {
       state.expenses = action.payload.fetchedData;
       state.totalExpenseAmount = action.payload.totalExpenseAmount;
+      state.totalExpenseCount = action.payload.fetchedData.length;
+      localStorage.setItem('expenses', JSON.stringify(state.expenses));
+      localStorage.setItem('totalExpenseAmount', JSON.stringify(state.totalExpenseAmount));
+      localStorage.setItem('totalExpenseCount', JSON.stringify(state.totalExpenseCount));
     },
 
     addExpense(state, action) {
-      state.expenses = [...state.expenses, action.payload];
+      state.expenses.push(action.payload);
       state.totalExpenseAmount += action.payload.amount;
+      state.totalExpenseCount += 1;
+      localStorage.setItem('expenses', JSON.stringify(state.expenses));
+      localStorage.setItem('totalExpenseAmount', JSON.stringify(state.totalExpenseAmount));
+      localStorage.setItem('totalExpenseCount', JSON.stringify(state.totalExpenseCount));
     },
 
     editExpense(state, action) {
       const updatedExpenses = state.expenses.map((e) => {
         if (e.id === action.payload.id) {
           state.totalExpenseAmount =
-            state.totalExpenseAmount - e.amount + action.payload.amount; // Subtracting the old amount (e.amount).
-                                                                                 // Adding the new amount (action.payload.amount).
-          return action.payload;  // Returns the new updated expense when the id matches.
+            state.totalExpenseAmount - e.amount + action.payload.amount;
+          return action.payload;
         }
-        return e;//  Returns the original expense if the id does not match.
+        return e;
       });
-      state.expenses = updatedExpenses;  //Replaces the existing state.expenses with the newly updated array.
+      state.expenses = updatedExpenses;
+      localStorage.setItem('expenses', JSON.stringify(state.expenses));
+      localStorage.setItem('totalExpenseAmount', JSON.stringify(state.totalExpenseAmount));
     },
 
     deleteExpense(state, action) {
-      const updatedExpenses = state.expenses.filter((e) => {
-        return e.id !== action.payload.delId;
-      });
-      state.expenses = updatedExpenses;
+      state.expenses = state.expenses.filter((e) => e.id !== action.payload.delId);
       state.totalExpenseAmount -= action.payload.amount;
+      state.totalExpenseCount -= 1;
+      localStorage.setItem('expenses', JSON.stringify(state.expenses));
+      localStorage.setItem('totalExpenseAmount', JSON.stringify(state.totalExpenseAmount));
+      localStorage.setItem('totalExpenseCount', JSON.stringify(state.totalExpenseCount));
     },
   },
 });
@@ -43,9 +111,6 @@ export const { fetchedExpense, addExpense, editExpense, deleteExpense } =
   expenseSlice.actions;
 
 export default expenseSlice.reducer;
-
-
-
 
 
 
