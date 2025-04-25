@@ -1,0 +1,97 @@
+.header {
+    width: 100%;
+    height: 5rem;
+    background-color: #1a1a1a;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 4%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+  }
+  
+  .logo {
+    font-family: "Lato", sans-serif;
+    font-size: 2rem;
+    color: #2dd4bf;
+    margin: 0;
+  }
+  
+  .header ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .header li {
+    margin: 0 0.5rem;
+  }
+  
+  .header a {
+    text-decoration: none;
+    color: white;
+  }
+  
+  .header button {
+    font-size: 1rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin: 0 5px;
+  }
+  
+  .headerList {
+    display: flex;
+    align-items: center;
+  }
+  
+  .nav-button {
+    background-color: #0066ff;
+    color: white;
+    border: none;
+  }
+  
+  .nav-button:hover {
+    background-color: #0052cc;
+  }
+  
+  .logout {
+    background-color: #e53935;
+    color: white;
+    border: none;
+    font-weight: 500;
+  }
+  
+  .logout:hover {
+    background-color: #d32f2f;
+  }
+  
+  .cart-button {
+    background-color: #00897b;
+    color: white;
+    border: none;
+  }
+  
+  .cart-button:hover {
+    background-color: #00796b;
+  }
+  
+  .cart-count {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    color: #00897b;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    font-size: 0.8rem;
+    margin-left: 5px;
+  }
+  

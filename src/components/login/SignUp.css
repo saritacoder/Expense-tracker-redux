@@ -1,0 +1,140 @@
+/* Reset the existing styles and create the new dark theme with purple gradient */
+.auth {
+  margin: 2rem auto;
+  width: 350px;
+  border-radius: 8px;
+  background-color: #1a1a1a;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  padding: 1.5rem;
+  text-align: center;
+  color: white;
+  margin-top: 7rem;
+}
+
+body {
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  min-height: 100vh;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.control input:focus {
+  border-color: #2575fc;
+  background-color: #1a1a1a;
+  outline: none;
+}
+
+.auth h1 {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1.5rem;
+  color: #2dd4bf;
+  font-weight: 500;
+}
+
+.control {
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.control label {
+  display: block;
+  color: #f1f1f1;
+  font-weight: normal;
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+  padding-top: 0;
+}
+
+.control input {
+  font: inherit;
+  font-size: 0.9rem;
+  background-color: #2a2a2a;
+  color: white;
+  border-radius: 4px;
+  border: 1px solid #444;
+  width: 100%;
+  text-align: left;
+  padding: 0.6rem;
+  margin-bottom: 0.5rem;
+}
+
+.actions {
+  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.actions button {
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  color: white;
+  background-color: #0066ff;
+  border: none;
+  border-radius: 4px;
+  padding: 0.6rem;
+  width: 100%;
+  transition: background-color 0.2s;
+}
+
+.actions button:hover {
+  background-color: #0052cc;
+}
+
+.toggle-text {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #f1f1f1;
+}
+
+.toggle {
+  background: none;
+  border: none;
+  color: #2dd4bf;
+  text-decoration: none;
+  cursor: pointer;
+  font-size: inherit;
+  font-weight: normal;
+  padding: 0;
+}
+
+.toggle:hover {
+  text-decoration: underline;
+}
+
+.forgot-password {
+  color: #2dd4bf;
+  font-size: 0.9rem;
+  padding-top: 0.5rem;
+  cursor: pointer;
+  text-align: right;
+  margin-bottom: 1rem;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+/* Override header styles to make it work with the new design */
+.header {
+  background-color: #1a1a1a;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+  color: #2dd4bf;
+}
+
+.header button {
+  background-color: #0066ff;
+  border: none;
+}
+
+.header button:hover {
+  background-color: #0052cc;
+}

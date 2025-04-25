@@ -1,76 +1,75 @@
 .profile-form {
-    max-width: 50%;
-    margin: 3rem auto;
-    padding: 20px;
-    background-color: #f4f4f4;
-    background-color: #fff;  /* White background for the box */
-    border: 1px solid #ddd;  /* Light border around the box */
-    border-radius: 8px;  /* Rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);  /* Subtle shadow */
-}
+    width: 100%;
+    margin-top: 15px;
+  }
   
-.form-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 1.2rem;
-    font-size: 0.75rem;
-}
+  .form-group {
+    margin-bottom: 15px;
+  }
   
-.cancel {
-    background-color: #f44336;
-    color: white;
-    border: none;
-    padding: 4px 8px;
-    cursor: pointer;
-    border-radius: 4px;
-    font-size: 1.2rem;
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 0.9rem;
+    color: #333;
     font-weight: bold;
-}
+  }
   
-.cancel:hover {
-    background-color: #d32f2f;
-}
-  
-form {
-    display: flex;
-    flex-direction: column;
-    font-size: 1rem;
-    font-weight: bold;
-}
-  
-.form-row {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-}
-  
-.form-row label {
-    flex: 0 0 30%;
-}
-  
-.form-row input {
-    flex: 1;
-    padding: 2px;
+  .form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #444;
     border-radius: 4px;
-    border: 1px solid #ccc;
-    /* font-size: 1.4rem; */
-}
-  
-.submit {
-    padding: 4px 8px;
-    background-color: #4CAF50;
+    background-color: #2a2a2a;
     color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 4px;
+    font-size: 0.9rem;
+  }
+  
+  .form-control:focus {
+    outline: none;
+    border-color: #00897b;
+  }
+  
+  .form-buttons {
+    display: flex;
+    gap: 10px;
     margin-top: 20px;
-    margin-bottom: 12px;
-    font-weight: bold;
-    font-size: 1.2rem;
-}
+  }
   
-.submit:hover {
-    background-color: #45a049;
-}
+  .update-btn {
+    background-color: #00897b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    flex: 1;
+    font-size: 1rem;
+  }
+  
+  .update-btn:hover {
+    background-color: #00796b;
+  }
+  
+  .cancel-btn {
+    background-color: #e53935;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    flex: 1;
+    font-size: 1rem;
+  }
+  
+  .cancel-btn:hover {
+    background-color: #d32f2f;
+  }
+  
+  .profile-name {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+    color: #2dd4bf;
+  }
   

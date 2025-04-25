@@ -1,0 +1,60 @@
+.expense-form {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+  
+.form-label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+  
+.expense-form input,
+.expense-form select {
+    width: 100%;
+    padding: 4px;
+    margin-bottom: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+  
+.expense-form .btn {
+    padding: 6px 12px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.btnList{
+    padding-left: 0px;
+}
+  
+.btn-success {
+    background-color: #28a745;
+    color: #fff;
+    font-size: 1.4rem;
+    font-family: 'Times New Roman', Times, serif;
+}
+  
+.btn-success:hover {
+    background-color: #218838;
+}
+  
+.btn-secondary {
+    background-color: rgb(192, 43, 43);
+    color: #fff;
+    font-size: 1.4rem;
+    font-family: 'Times New Roman', Times, serif;
+    /* font-weight: bold; */
+}
+  
+.btn-secondary:hover {
+    background-color: #8b4a4a;
+}
+  

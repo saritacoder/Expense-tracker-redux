@@ -1,52 +1,105 @@
 .profile-container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  padding: 0 20px;
-  padding-right: 0px;
-  box-sizing: border-box;
-  margin-top: 5.5rem;
-}
-
-.profile-header {
-  width: 100%; 
-  border-bottom: 0.2rem solid #000;
-  padding-bottom: 0.8rem;
-  padding-right: 0px;
-}
-
-.profile-head {
-  font-style: italic;
-  font-size: 1.4rem;
-}
-
-.profile-update {
-  background-color: #d63d3dbb;
-  padding: 0.5rem 1rem;
-  border-radius: 20px;
-  max-width: 40%;
-  font-size: 1rem;
-  font-style: italic;
-}
-
-.profile-update a {
-  color: blue;
-  cursor: pointer;
-}
-
-.bold-text{
-  font-weight: bold;
-}
-
-.email-verification{
-  font-size: 1.2rem;
-  border-radius: 0.8rem;
-  box-shadow: inset;
-  text-align: center;
-  margin-top: 0.8rem;
-  color: white;
-  padding: 0.2rem 0.5rem;
-  margin-left: 46%;
-  background-color: gray;
-}
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    margin-top: 5.5rem;
+  }
+  
+  .profile-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #1a1a1a;
+    padding: 15px 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+  }
+  
+  .profile-welcome {
+    font-size: 1.2rem;
+    color: white;
+  }
+  
+  .profile-update {
+    color: white;
+    font-size: 0.9rem;
+  }
+  
+  .profile-update a {
+    color: #2dd4bf;
+    cursor: pointer;
+    margin-left: 5px;
+    text-decoration: none;
+  }
+  
+  .profile-update a:hover {
+    text-decoration: underline;
+  }
+  
+  .verify-email-container {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+  }
+  
+  .email-verification {
+    background-color: #00897b;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .email-verification:hover {
+    background-color: #00796b;
+  }
+  
+  .profile-card {
+    max-width: 300px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profile-card-header {
+    background-color: #00897b;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-size: 1.2rem;
+  }
+  
+  .profile-card-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  .profile-image {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  .edit-profile-btn {
+    background-color: #00897b;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    margin-top: 20px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+  }
+  
+  .edit-profile-btn:hover {
+    background-color: #00796b;
+  }
+  
